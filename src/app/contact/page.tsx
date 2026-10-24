@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
-import { HeroBackground } from "@/components/HeroBackground";
 import { SelectedWork } from "@/components/home/SelectedWork";
 import { Reveal } from "@/components/ui/Reveal";
-import { site } from "@/lib/site";
+import { site, unsplash } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -28,7 +28,15 @@ export default async function ContactPage({ searchParams }: Props) {
     <>
       <section className="relative isolate overflow-hidden bg-navy-950 text-white">
         <div aria-hidden="true" className="absolute inset-0 -z-10">
-          <HeroBackground />
+          <Image
+            src={unsplash("photo-1517245386807-bb43f82c33c4")}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/55 to-navy-950/40" />
         </div>
         <div className="container-site pt-36 pb-32 lg:pt-44 lg:pb-44">
           <h1 className="rise max-w-4xl text-display font-light text-balance">

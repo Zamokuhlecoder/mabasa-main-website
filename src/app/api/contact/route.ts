@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
 
   try {
     await sendMail({
-      subject: `Project enquiry: ${d.company} — ${d.service}`.replace(/[\r\n]+/g, " "),
+      subject: `Project enquiry: ${d.company} | ${d.service}`.replace(/[\r\n]+/g, " "),
       text,
       html,
       replyTo: d.email,

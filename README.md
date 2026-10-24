@@ -1,4 +1,4 @@
-# Blackroid — Website
+# Blackroid - Website
 
 Marketing and lead-generation website for **Blackroid**, a South African technology consulting and software engineering company.
 
@@ -25,39 +25,40 @@ npm run dev                  # http://localhost:3000
 
 See [`.env.example`](.env.example) for the full list.
 
-| Variable                                                                  | Required        | Notes                                                                               |
-| ------------------------------------------------------------------------- | --------------- | ----------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`                                                    | Yes (prod)      | Canonical URL used in metadata, sitemap, Open Graph, structured data.               |
-| `CONTACT_TO_EMAIL`                                                        | No              | Enquiry destination. Defaults to `blackroid@gmail.com`.                             |
-| `CONTACT_FROM_EMAIL`                                                      | Yes (for email) | Sender address on a domain verified with your provider.                             |
-| `RESEND_API_KEY`                                                          | One of these    | Uses [Resend](https://resend.com) when set.                                         |
-| `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASSWORD` / `SMTP_SECURE` | One of these    | Any SMTP provider, used when no Resend key is set.                                  |
-| `NEXT_PUBLIC_CONTACT_EMAIL`                                               | No              | Public address shown on the site. Defaults to `blackroid@gmail.com`.                |
-| `NEXT_PUBLIC_CLIENT_PORTAL_URL`                                           | No              | Address of the client portal login. The "Client Portal" links appear only when set. |
+| Variable                                                                       | Required        | Notes                                                                                             |
+| ------------------------------------------------------------------------------ | --------------- | ------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`                                                         | Yes (prod)      | Canonical URL used in metadata, sitemap, Open Graph, structured data.                             |
+| `CONTACT_TO_EMAIL`                                                             | No              | Enquiry destination. Defaults to `Scofield@blackroid.com`.                                        |
+| `CONTACT_FROM_EMAIL`                                                           | Yes (for email) | Sender address on a domain verified with your provider.                                           |
+| `RESEND_API_KEY`                                                               | One of these    | Uses [Resend](https://resend.com) when set.                                                       |
+| `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASSWORD` / `SMTP_SECURE`      | One of these    | Any SMTP provider, used when no Resend key is set.                                                |
+| `NEXT_PUBLIC_CONTACT_EMAIL`                                                    | No              | Public address shown on the site. Defaults to `Scofield@blackroid.com`.                           |
+| `NEXT_PUBLIC_CLIENT_PORTAL_URL`                                                | No              | Address of the client portal login. Until set, the Login links open the built-in `/login` page.   |
+| `NEXT_PUBLIC_LINKEDIN_URL` / `NEXT_PUBLIC_INSTAGRAM_URL` / `NEXT_PUBLIC_X_URL` | No              | Profile addresses for the top-bar icons. WhatsApp uses the phone number; unset icons link to `#`. |
 
-If email delivery is not configured, the contact API responds with `503` and the form shows a clear "temporarily unavailable" message — it never pretends a submission succeeded.
+If email delivery is not configured, the contact API responds with `503` and the form shows a clear "temporarily unavailable" message - it never pretends a submission succeeded.
 
 ## Contact workflow
 
 `POST /api/contact` (`src/app/api/contact/route.ts`):
 
-- **Validation** — shared Zod schema (`src/lib/contact-schema.ts`) on both client and server.
-- **Spam protection** — hidden honeypot field plus a minimum fill-time check; caught submissions are discarded silently.
-- **Rate limiting** — 5 submissions per IP per 10 minutes (`src/lib/rate-limit.ts`). This is in-memory and per serverless instance; for a strict global limit, back it with Vercel KV / Upstash Redis.
-- **Origin check** — cross-site POSTs are rejected.
-- **Delivery** — Resend or SMTP (`src/lib/mail.ts`); user input is HTML-escaped and the enquirer's address is set as `Reply-To`.
-- **Failure handling** — `422` validation, `429` rate limit, `502` provider failure, `503` not configured, each surfaced to the user.
+- **Validation** - shared Zod schema (`src/lib/contact-schema.ts`) on both client and server.
+- **Spam protection** - hidden honeypot field plus a minimum fill-time check; caught submissions are discarded silently.
+- **Rate limiting** - 5 submissions per IP per 10 minutes (`src/lib/rate-limit.ts`). This is in-memory and per serverless instance; for a strict global limit, back it with Vercel KV / Upstash Redis.
+- **Origin check** - cross-site POSTs are rejected.
+- **Delivery** - Resend or SMTP (`src/lib/mail.ts`); user input is HTML-escaped and the enquirer's address is set as `Reply-To`.
+- **Failure handling** - `422` validation, `429` rate limit, `502` provider failure, `503` not configured, each surfaced to the user.
 
 ## Content
 
 All copy lives in typed data files so it can be edited without touching layout code:
 
-- `src/lib/services.ts` — the six services (also drives `/services/[slug]` pages, footer, form options).
-- `src/lib/industries.ts` — industry challenges and illustrative solutions.
-- `src/lib/process.ts` — the four-stage engagement model.
-- `src/lib/case-studies.ts` — **empty by design.** Add only verified, client-approved case studies; when present, the homepage "Selected Work" section lists them automatically. Until then it shows a problem-led, services-to-contact section.
-- `src/lib/clients.ts` — client names shown on the homepage. Add each client's `feedback` (their own approved quote, the person's name and role) and a testimonial card appears automatically.
-- `src/lib/site.ts` — brand name, legal name, navigation.
+- `src/lib/services.ts` - the six services (also drives `/services/[slug]` pages, footer, form options).
+- `src/lib/industries.ts` - industry challenges and illustrative solutions.
+- `src/lib/process.ts` - the four-stage engagement model.
+- `src/lib/case-studies.ts` - **empty by design.** Add only verified, client-approved case studies; when present, the homepage "Selected Work" section lists them automatically. Until then it shows a problem-led, services-to-contact section.
+- `src/lib/clients.ts` - client names shown on the homepage. Add each client's `feedback` (their own approved quote, the person's name and role) and a testimonial card appears automatically.
+- `src/lib/site.ts` - brand name, legal name, navigation.
 
 ## Search visibility & content protection
 
@@ -75,7 +76,7 @@ All copy lives in typed data files so it can be edited without touching layout c
 - Text-and-data-mining rights are reserved via the W3C TDMRep header, meta tag and `.well-known/tdmrep.json`.
 - No source maps are shipped to browsers.
 
-**Limits — read this.** A public website must send its HTML, CSS and text to every visitor, so it cannot be made uncopyable; robots.txt and TDMRep are honoured by reputable operators, not enforced. For stronger protection: keep this repository **private**, turn on Vercel's Firewall / Bot Protection to rate-limit and challenge scrapers, and rely on the copyright notice for legal recourse.
+**Limits - read this.** A public website must send its HTML, CSS and text to every visitor, so it cannot be made uncopyable; robots.txt and TDMRep are honoured by reputable operators, not enforced. For stronger protection: keep this repository **private**, turn on Vercel's Firewall / Bot Protection to rate-limit and challenge scrapers, and rely on the copyright notice for legal recourse.
 
 ## Before going live
 

@@ -44,7 +44,6 @@ export function WhyMst() {
                   className="size-8 text-accent transition-transform duration-500 ease-out-expo group-hover:-translate-y-1"
                 />
                 <h3 className="mt-14 text-2xl font-light tracking-tight">{d.title}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{d.text}</p>
               </article>
             </Reveal>
           ))}

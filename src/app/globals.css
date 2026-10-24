@@ -14,13 +14,13 @@
   --color-line: #e5e5e5;
   --color-line-strong: #cfcfd1;
 
-  /* Navy (dark surfaces) — built around brand blue #002d72 */
+  /* Navy (dark surfaces) - built around brand blue #002d72 */
   --color-navy-950: #000c1f;
   --color-navy-900: #00142f;
   --color-navy-800: #001d45;
   --color-navy-700: #002d72;
 
-  /* Brand blue accent (#002d72) — used sparingly */
+  /* Brand blue accent (#002d72) - used sparingly */
   --color-accent: #002d72;
   --color-accent-deep: #001d4a;
   --color-accent-soft: #8fb0ea;
@@ -133,7 +133,7 @@
   }
 }
 
-/* Above-the-fold entrance animations — CSS only, so they run before hydration. */
+/* Above-the-fold entrance animations - CSS only, so they run before hydration. */
 .rise {
   animation: rise 1s var(--ease-out-expo) both;
   animation-delay: var(--d, 0s);
@@ -160,6 +160,16 @@
   from {
     transform: translateY(105%);
   }
+}
+@keyframes word-swap {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+}
+.word-swap {
+  display: inline-block;
+  animation: word-swap 0.5s var(--ease-out-expo) both;
 }
 
 .no-scrollbar {

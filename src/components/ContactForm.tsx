@@ -138,7 +138,7 @@ export function ContactForm({ initialService, publicEmail }: { initialService?: 
       // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved) setValues((v) => ({ ...v, ...saved, service: presetService || saved.service || "" }));
     } catch {
-      // Storage unavailable (private mode, blocked) — start empty.
+      // Storage unavailable (private mode, blocked) - start empty.
     }
   }, [presetService]);
 
@@ -242,7 +242,7 @@ export function ContactForm({ initialService, publicEmail }: { initialService?: 
           className="rounded-[4px] border border-line bg-white p-8 sm:p-12"
         >
           <CheckCircle2 aria-hidden="true" strokeWidth={1.25} className="size-12 text-accent" />
-          <h2 className="mt-8 text-title font-light">Thanks, {sent.name.split(" ")[0]} — we&apos;ve got it.</h2>
+          <h2 className="mt-8 text-title font-light">Thanks, {sent.name.split(" ")[0]}. We&apos;ve got it.</h2>
           <p className="mt-4 max-w-lg leading-relaxed text-muted">
             We&apos;ll reply to <span className="text-ink">{sent.email}</span>.
           </p>
@@ -378,7 +378,7 @@ export function ContactForm({ initialService, publicEmail }: { initialService?: 
             </div>
           </fieldset>
 
-          {/* Honeypot — hidden from people and assistive technology. */}
+          {/* Honeypot - hidden from people and assistive technology. */}
           <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
             <label htmlFor="website">Leave this field empty</label>
             <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />

@@ -8,16 +8,19 @@ export function PageHero({
   lead,
   children,
   compact = false,
+  background,
 }: {
   title: ReactNode;
   lead?: ReactNode;
   children?: ReactNode;
   compact?: boolean;
+  /** Replaces the default gradient backdrop, e.g. a photo with its own scrim. */
+  background?: ReactNode;
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-navy-950 text-white">
       <div aria-hidden="true" className="absolute inset-0 -z-10">
-        <HeroBackground />
+        {background ?? <HeroBackground />}
       </div>
       <div
         className={cn(

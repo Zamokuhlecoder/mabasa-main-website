@@ -37,10 +37,6 @@ export function Hero() {
 
         <div className="rise mt-10" style={{ "--d": "0.6s" } as CSSProperties}>
           <div>
-            <p className="mb-8 max-w-xl text-lg leading-relaxed text-pretty text-white/80 lg:text-xl">
-              Blackroid partners with organisations to solve complex business challenges, strengthen operations, and
-              create lasting value through technology, engineering, and strategic execution.
-            </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact" variant="light">
                 Discuss Your Business Challenges

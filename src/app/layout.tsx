@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, Inter_Tight } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Providers } from "@/components/Providers";
+import { CookieBanner } from "@/components/CookieBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
@@ -26,7 +27,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Blackroid — Engineering Better Businesses",
+    default: "Blackroid | Engineering Better Businesses",
     template: "%s | Blackroid",
   },
   description: site.description,
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     locale: site.locale,
     siteName: site.name,
     url: "/",
-    title: "Blackroid — Engineering Better Businesses",
+    title: "Blackroid | Engineering Better Businesses",
     description: site.description,
   },
   twitter: { card: "summary_large_image" },
@@ -144,6 +145,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Header />
           <main id="main">{children}</main>
           <Footer />
+          <CookieBanner />
         </Providers>
         <JsonLd data={structuredData} />
       </body>

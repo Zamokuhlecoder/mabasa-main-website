@@ -10,22 +10,19 @@ const segments = [
     title: "Startups",
     image: unsplash("photo-1568658176307-bfbd2873abda"),
     alt: "Two founders reviewing work on a laptop",
-    who: "You have an early product or idea and need a sound foundation.",
-    help: "We help founders turn early ideas into dependable products, with practical guidance along the way.",
+    who: "Turning an idea into a dependable product.",
   },
   {
     title: "Small & Medium Enterprises",
     image: unsplash("photo-1687422808248-f807f4ea2a2e"),
     alt: "A small business owner checking orders on his phone",
-    who: "Your business runs, but manual work and disconnected tools slow you down.",
-    help: "We strengthen operations by modernising systems, connecting tools and automating repetitive work.",
+    who: "Replacing manual work and disconnected tools.",
   },
   {
     title: "Growing Organisations",
     image: unsplash("photo-1758518730136-1bf4fa26ccbf"),
     alt: "A team of professionals meeting around a conference table",
-    who: "You're scaling fast and your systems need to keep up.",
-    help: "We help build the capabilities to scale: stronger platforms, reliable infrastructure and advanced engineering.",
+    who: "Systems that keep up as you scale.",
   },
 ];
 
@@ -59,10 +56,8 @@ export function ClientSegments() {
                 </div>
 
                 <div className="flex flex-1 flex-col p-6 lg:p-8">
-                  <p className="text-sm font-medium text-accent">You&apos;re here if…</p>
-                  <p className="mt-2 text-lg leading-snug text-ink">{s.who}</p>
-                  <p className="mt-6 border-t border-line pt-6 leading-relaxed text-muted">{s.help}</p>
-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-8 text-sm font-medium text-accent">
+                  <p className="text-lg leading-snug text-ink">{s.who}</p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium text-accent">
                     Talk to us
                     <ArrowUpRight
                       aria-hidden="true"

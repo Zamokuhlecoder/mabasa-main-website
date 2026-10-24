@@ -4,6 +4,7 @@ import Image from "next/image";
 import { HeroBackground } from "@/components/HeroBackground";
 import { CtaBand } from "@/components/CtaBand";
 import { Leadership } from "@/components/Leadership";
+import { Principles } from "@/components/Principles";
 import { Reveal } from "@/components/ui/Reveal";
 import { unsplash } from "@/lib/site";
 import markLight from "../../../public/brand/mark-light.png";
@@ -14,33 +15,6 @@ export const metadata: Metadata = {
     "Blackroid is a business-focused technology company helping organisations address complex operational and technical challenges. Learn about our approach, our principles and our leadership.",
   alternates: { canonical: "/about" },
 };
-
-const principles = [
-  {
-    title: "Start with the problem",
-    text: "We begin with the business outcome, not a preferred technology. Sometimes the right answer is less software, not more.",
-  },
-  {
-    title: "Simplicity is a feature",
-    text: "Simple systems are easier to operate, secure and change. We avoid complexity that does not earn its place.",
-  },
-  {
-    title: "Build for the people who maintain it",
-    text: "Clear code, documentation and sound architecture mean your systems remain understandable long after launch.",
-  },
-  {
-    title: "Security and privacy by design",
-    text: "Access control, data protection and POPIA obligations are considered from the first design conversation.",
-  },
-  {
-    title: "Honest estimates",
-    text: "We would rather give you a realistic assessment than an attractive one. Trade-offs are surfaced early and openly.",
-  },
-  {
-    title: "Measure what matters",
-    text: "We define success in operational terms — time saved, errors reduced, decisions improved — and design towards it.",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -137,21 +111,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24 lg:py-36">
-        <div className="container-site">
-          <Reveal className="max-w-3xl">
-            <h2 className="text-headline font-light text-balance">The principles behind our work.</h2>
-          </Reveal>
-          <div className="mt-16 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-            {principles.map((p, i) => (
-              <Reveal key={p.title} delay={(i % 3) * 0.08} className="border-t border-ink pt-6">
-                <p className="font-mono text-xs text-accent">0{i + 1}</p>
-                <h3 className="mt-5 text-2xl font-light tracking-tight">{p.title}</h3>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Principles />
       <CtaBand />
     </>
   );

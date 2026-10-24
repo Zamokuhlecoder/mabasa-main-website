@@ -54,7 +54,7 @@ export function SelectedWork() {
                   <p className="mt-5 leading-relaxed text-ink-soft">{c.summary}</p>
                   <ul className="mt-6 space-y-2 text-[0.9375rem] text-ink-soft">
                     {c.outcomes.map((o) => (
-                      <li key={o}>— {o}</li>
+                      <li key={o}>{o}</li>
                     ))}
                   </ul>
                 </article>

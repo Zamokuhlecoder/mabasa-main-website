@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 /**
  * Crawlers that only collect content to train AI models. They are asked to stay out.
- * robots.txt is honoured by reputable operators but is not enforcement — see README.
+ * robots.txt is honoured by reputable operators but is not enforcement - see README.
  */
 const trainingCrawlers = [
   "GPTBot", // OpenAI model training

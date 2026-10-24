@@ -37,7 +37,7 @@ export const industries: Industry[] = [
     image: unsplash("photo-1553413077-190dd305871c"),
     alt: "Interior of a large warehouse with stacked shelving",
     summary:
-      "Visibility and coordination across orders, inventory, fleets and partners — so operations run on current information.",
+      "Visibility and coordination across orders, inventory, fleets and partners, so operations run on current information.",
     challenges: [
       "Limited real-time visibility of stock and shipments",
       "Order data re-captured between client, warehouse and carrier systems",

@@ -38,8 +38,8 @@ export default function PrivacyPage() {
             >
               <AlertTriangle aria-hidden="true" className="mt-0.5 size-5 shrink-0" />
               <p>
-                <strong className="font-semibold">Draft — subject to legal review.</strong> This policy has been
-                prepared as a working draft and has not yet been approved by a legal adviser. Items marked &ldquo;To be
+                <strong className="font-semibold">Draft: subject to legal review.</strong> This policy has been prepared
+                as a working draft and has not yet been approved by a legal adviser. Items marked &ldquo;To be
                 confirmed&rdquo; must be completed before this policy is treated as final.
               </p>
             </div>

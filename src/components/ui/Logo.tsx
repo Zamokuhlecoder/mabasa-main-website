@@ -7,7 +7,7 @@ import logoLight from "../../../public/brand/logo-light.png";
 /** Blackroid lockup. "light" is the white-ink version for dark backgrounds. */
 export function Logo({ tone = "dark", className }: { tone?: "dark" | "light"; className?: string }) {
   return (
-    <Link href="/" aria-label="Blackroid — home" className={cn("relative inline-flex shrink-0", className)}>
+    <Link href="/" aria-label="Blackroid home" className={cn("relative inline-flex shrink-0", className)}>
       {/* Both versions are rendered so the header can cross-fade between them without a reload. */}
       <Image
         src={logoDark}

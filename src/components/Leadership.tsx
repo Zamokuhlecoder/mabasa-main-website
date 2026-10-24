@@ -10,7 +10,7 @@ export function Leadership() {
       <div className="container-site">
         <SectionHeading title="The people behind the work." />
 
-        <ul className="mt-14 grid gap-8 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-10">
+        <ul className="mt-14 grid gap-8 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4 lg:gap-8">
           {team.map((m, i) => (
             <li key={m.role}>
               <Reveal delay={i * 0.1}>

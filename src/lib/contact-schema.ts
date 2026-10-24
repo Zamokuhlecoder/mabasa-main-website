@@ -37,7 +37,7 @@ export const contactSchema = z.object({
     .min(30, "Please describe your project in at least 30 characters.")
     .max(5000, "Please keep your description under 5,000 characters."),
   consent: z.literal(true, { message: "Please tick the box to agree to how we'll use your information." }),
-  // Spam protection — must stay empty / be a plausible render timestamp.
+  // Spam protection - must stay empty / be a plausible render timestamp.
   website: z.string().max(0).optional().or(z.literal("")),
   startedAt: z.number().int().positive(),
 });
