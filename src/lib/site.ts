@@ -7,7 +7,7 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, ""),
   locale: "en_ZA",
   country: "South Africa",
-  publicEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Scofield@blackroid.com",
+  publicEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "blackroid@gmail.com",
   /** Where the client portal login lives. Until it is set the Client Portal links point to "#". */
   clientPortalUrl: process.env.NEXT_PUBLIC_CLIENT_PORTAL_URL || "#",
 } as const;

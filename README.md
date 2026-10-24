@@ -28,11 +28,11 @@ See [`.env.example`](.env.example) for the full list.
 | Variable                                                                  | Required        | Notes                                                                               |
 | ------------------------------------------------------------------------- | --------------- | ----------------------------------------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL`                                                    | Yes (prod)      | Canonical URL used in metadata, sitemap, Open Graph, structured data.               |
-| `CONTACT_TO_EMAIL`                                                        | No              | Enquiry destination. Defaults to `Scofield@blackroid.com`.                          |
+| `CONTACT_TO_EMAIL`                                                        | No              | Enquiry destination. Defaults to `blackroid@gmail.com`.                             |
 | `CONTACT_FROM_EMAIL`                                                      | Yes (for email) | Sender address on a domain verified with your provider.                             |
 | `RESEND_API_KEY`                                                          | One of these    | Uses [Resend](https://resend.com) when set.                                         |
 | `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASSWORD` / `SMTP_SECURE` | One of these    | Any SMTP provider, used when no Resend key is set.                                  |
-| `NEXT_PUBLIC_CONTACT_EMAIL`                                               | No              | Public address shown on the site. Defaults to `Scofield@blackroid.com`.             |
+| `NEXT_PUBLIC_CONTACT_EMAIL`                                               | No              | Public address shown on the site. Defaults to `blackroid@gmail.com`.                |
 | `NEXT_PUBLIC_CLIENT_PORTAL_URL`                                           | No              | Address of the client portal login. The "Client Portal" links appear only when set. |
 
 If email delivery is not configured, the contact API responds with `503` and the form shows a clear "temporarily unavailable" message — it never pretends a submission succeeded.
